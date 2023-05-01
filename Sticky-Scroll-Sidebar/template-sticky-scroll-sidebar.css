@@ -1,0 +1,130 @@
+/* https://github.com/TarryDan/CSS-layouts */
+/* Non commercial use only */
+
+/* REPLACEMENTS &c*/
+
+* {
+	box-sizing:border-box;
+}
+
+body {
+	height:100%;
+}
+
+
+/* COLOUR SCHEME */
+
+:root {
+	--border: 5px solid #324043;
+}
+
+
+/* TWO PANEL LAYOUT */
+
+/* Everything on the page is in a MAIN */
+    /* ASIDE is a sidebar */
+    /* ARTICLE is the main flow of your content */
+    /* SECTION divides the article into neat boxes */
+
+main {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	gap: 3rem;
+}
+
+main > :first-child  {
+  /* ↓ The width when the sidebar _is_ a sidebar */
+  flex-basis: 23rem;
+  flex-grow: 1;
+  height: 100%;
+}
+
+main > :last-child {
+  /* ↓ Grow from nothing */
+  flex-basis: 0;
+  flex-grow: 999;
+  /* ↓ Wrap when the elements are of equal width */
+  min-inline-size: 50%;
+
+}
+
+/* This produces a narrow sidebar. If you want the panels to be more 50/50 use these code blocks instead: 
+
+main > :first-child  {
+  flex-basis: 30rem;
+  flex-grow: 1;
+  height:100%;
+}
+
+main > :last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: 35%;
+
+*/
+
+
+main > * {
+	padding:2vw;
+}
+
+/* These rules for images are so images in your sidebar section will do the right behaviour. You may need to tinker with this to get your preferred result */
+img {
+	max-width:100%;
+}
+
+aside img {
+	max-width:100%;
+	max-height:90vh;
+}
+
+/* What does the sidebar look like*/
+aside {
+	margin-left:2vw;
+	position:sticky;
+	max-height:99vh;
+	top: 0;
+	display:flex;
+    flex-direction: column;
+	justify-content: center;
+    height: 99vh;
+}
+
+/* Optimise Space between Sections */
+
+article > * + *{
+	margin-block-start:1rem;
+	display: flex;
+	flex-direction:column;
+	justify-content: flex-start;
+
+}
+
+/* Make it mobile responsive! */
+/* (sidebar does not stick on mobile) */
+
+@media screen and (max-width: 900px) {
+
+	aside {
+		position: static;
+	}
+}
+
+/* BOX APPEARANCE */
+
+/* edit this as you prefer */
+main > :first-child, main > :last-child > * {
+	padding: 1.8rem;
+	margin-bottom: 1.8rem;
+	border: var(--border);
+	max-width:100%;
+}
+
+/* FIX */
+
+/* h1s in sections end up too small by default so set it explicitly if you wish */
+
+section h1 {
+    font-size: 3em;
+}
