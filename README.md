@@ -2,6 +2,9 @@
 Minimalist, light, old-school HTML&amp;CSS templates for noncommercial use only
 
 ## Sticky Scroll Sidebar
+
+[View example](https://anemptyblissbeyondthisworld.neocities.org/layouts/Sticky-Scroll-Sidebar/template-sticky-scroll-sidebar)
+
 * Sidebar + main content
 * Mobile Responsive
 * Sidebar is sticky as you scroll on desktop
