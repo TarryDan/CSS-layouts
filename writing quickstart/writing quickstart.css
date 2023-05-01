@@ -44,6 +44,11 @@ h2 {
   margin-bottom: 1.5em;
 }
 
+h3 {
+  text-align: center;
+  font-variant-caps: small-caps;
+  font-weight: bold;
+}
 
 img, figure {
   max-width:60ch;
